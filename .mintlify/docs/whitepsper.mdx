@@ -1,0 +1,286 @@
+---
+tittle: LOGX
+description: Large Script Logic Model
+layouts: page
+---
+
+## LOGX
+
+Acronym: Logic eXtraction & eXecution
+Class: Large Script Logic Model (LSLM)
+
+⸻
+
+What LOGX Is
+
+LOGX is a reasoning-first AI model designed to analyze, understand, and operate on large codebases and scripts.
+
+It focuses on logic, structure, and execution, not just text prediction.
+
+>
+>LOGX is optimized for:
+	•	Script analysis
+	•	Dependency resolution
+	•	Execution flow inference
+	•	Multi-file reasoning
+	•	Tool-driven automation
+
+Think of it as a code intelligence engine, not a chatbot.
+
+
+
+## Core Capabilities
+
+1  Script Logic Analysis
+
+2.    •	Understands program intent
+	•	Extracts control flow
+	•	Identifies logical blocks and invariants
+
+4. Dependency & Execution Order
+	•	Resolves file and module dependencies
+	•	Determines correct execution sequencing
+	•	Detects circular or broken dependencies
+
+5. Multi-Language Reasoning
+	•	JavaScript / TypeScript
+	•	Python
+	•	Swift
+	•	Shell scripts
+	•	Mixed-stack repositories
+
+6. Structural Refactoring Insight
+	•	Suggests file reordering
+	•	Identifies dead code
+	•	Proposes modular boundaries
+
+7. Tool-Aware Reasoning
+8. 
+	•	Works with analyzers, linters, AST tools
+	•	Designed for agent and pipeline integration
+	•	Deterministic outputs when required
+
+⸻
+
+What LOGX Is Not
+
+	•	Not a conversational chat model
+	•	Not a creative writing model
+	•	Not a generic LLM wrapper
+
+
+⸻
+
+## Model Variants
+
+
+LOGX-Mini
+
+	•	Lightweight
+	•	Fast dependency scans
+	•	Local or edge use
+	•	Ideal for CI and pre-commit hooks
+
+LOGX-Base
+
+	•	Full script reasoning
+	•	Cross-file analysis
+	•	Default production model
+
+LOGX-Large
+
+	•	Large repositories
+	•	Deep execution graphs
+	•	Architectural-level reasoning
+
+⸻
+
+## Typical Use Cases
+	•	Script Analyzer Bots
+	•	Repo intelligence tools
+	•	Automated README generation
+	•	Build & execution planners
+	•	AI DevOps assistants
+	•	Codebase onboarding agents
+
+⸻
+
+## Example Invocation (Conceptual)
+
+Input:
+Analyze this repository and determine the correct execution order.
+
+LOGX Output:
+- Entry point: index.ts
+- Dependency chain resolved
+- Circular import detected in utils/
+- Suggested reordering provided
+
+
+## Design Philosophy
+
+	•	Deterministic where possible
+	•	Explicit reasoning over hidden magic
+	•	Structure over verbosity
+	•	Engineer-trustworthy outputs
+
+LOGX is built to think like a compiler, reason like an architect, and operate like a system tool.
+
+⸻
+
+One-Line Tagline
+
+LOGX — intelligence for scripts, not just strings.
+
+⸻
+
+⸻
+
+LOGX — Complete System Overview
+
+LOGX is now positioned as a Large Script Logic Model with full-stack integration: Swift, Python, Node, FastAPI, CLI, and example apps.
+
+⸻
+'
+1. Folder Structure (Full)
+
+
+<p>
+>
+
+       logx/
+    ├── README.md                    # Repo intro, model overview
+    ├── model/
+    │   └── LOGX.md                  # Official model card
+    ├── engine/
+    │   ├── architecture.md          # System design diagram & flow
+    │   ├── pipeline.md              # Execution & reasoning pipeline
+    │   ├── analyzer.py              # Core logic analyzer
+    │   ├── dependency.py            # Dependency resolver
+    │   └── executor.py              # Execution order engine
+    ├── adapters/
+    │   ├── python/                  # Python API & wrapper
+    │   ├── node/                     # Node.js interface
+    │   └── swift/                    # Swift SDK for SwiftUI apps
+    ├── examples/
+    │   ├── SwiftUIChatApp/          # Swift demo
+    │   ├── CLIAnalyzer/             # CLI demo
+    │   └── RepoDependencyDemo/      # Example repo analysis
+    ├── backend/
+    │   ├── main.py                  # FastAPI endpoint
+    │   ── requirements.txt
+    ├── scripts/
+    │   └── setup.sh                 # Installation / build scripts
+    ├── docs/
+    │   ├── usage.md
+    │   ├── deployment.md
+    │   └── integration.md
+    └── tests/
+    ├── test_analyzer.py
+    ├── test_dependency.py
+    └── test_executor.py
+</p>
+``
+
+## Core Components Explained
+
+Engine: 
+
+	•	analyzer.py: Parses scripts and extracts logical structure
+	•	dependency.py: Resolves file/module dependencies, detects circular imports
+	•	executor.py: Determines safe execution order for multi-file projects
+
+Adapters:
+
+	•	Python: Local script runner + API wrapper
+	•	Node: JS/TS integration for CI/CD pipelines
+	•	Swift: SwiftUI-ready SDK for iOS/macOS apps
+
+Backend
+	•	FastAPI endpoint exposing LOGX analysis services
+	•	Returns JSON with logic maps, dependency chains, and execution order
+
+Examples: 
+
+	•	Demonstrates real-world usage
+	•	CLI, SwiftUI, and NodeJS pipelines
+	•	Easy for engineers to replicate
+
+Tests: 
+</p>
+
+	•	Unit tests for all core engine modules
+	•	Ensures deterministic outputs
+
+⸻
+
+3. LOGX Model Card Integration
+
+Already included in model/LOGX.md.
+	•	Defines model purpose, scope, and variants
+	•	Ensures clear external documentation for users or contributors
+
+⸻
+
+4. CLI Example
+
+Analyze a repo folder
+
+    python backend/main.py --repo ./examples/RepoDependencyDemo
+
+    # Output:
+    # Entry Point: index.ts
+    # Dependency Graph:
+    #   utils -> core -> index
+    # Circular imports detected: None
+
+
+⸻
+
+5. Swift SDK Usage (Example)
+
+import SwiftAI
+
+    
+    let repoAnalyzer = LOGXAnalyzer()
+    let result = repoAnalyzer.analyzeRepo(path: "/Users/seriki/Projects/RepoDemo")
+    print(result.dependencyGraph)
+    print(result.executionOrder)
+
+
+⸻
+
+6. FastAPI Endpoint
+
+       from fastapi import FastAPI
+       from engine.analyzer import Analyzer
+
+       app = FastAPI()
+       analyzer = Analyzer()
+
+       @app.post("/analyze")
+        def analyze_repo(repo_path: str):
+       return analyzer.run(repo_path)
+
+Exposes the model to local apps, pipelines, and CI systems
+
+	•	Compatible with Python, Node, and Swift clients
+
+## Deployment Guide
+	 •	Optional: Dockerfile for containerized execution
+	•	CI/CD pipelines for continuous analysis on repositories
+	•	FastAPI + Uvicorn deployment for server-based usage
+	•	Swift SDK can call local or remote backend endpoints
+
+⸻
+
+## Versioning & Naming
+	•	Repo: logx
+	•	Model: LOGX-Mini, LOGX-Base, LOGX-Large
+	•	GitHub description:
+
+
+
+“LOGX — Large Script Logic Model for multi-file code analysis, dependency reasoning, and execution flow intelligence.”
+
+⸻
